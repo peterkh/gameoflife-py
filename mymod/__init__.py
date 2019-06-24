@@ -1,1 +1,0 @@
-from .thingo import Thingo
