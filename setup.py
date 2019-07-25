@@ -7,13 +7,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-        name='mymod',
+        name='gameoflife',
         version='0.0.1',
-        description='Example Python Project',
+        description='Conway\'s Game of Life',
         long_description=readme,
-        author='John Joe',
-        author_email='johndoe@example.com',
-        url='https://github.com/johndoe/mymod-py',
+        author='Peter Hall',
+        author_email='ph@ll.id.au',
+        url='https://github.com/peterkh/gameoflife-py',
         license=license,
         packages=find_packages(exclude=('tests'))
         )
