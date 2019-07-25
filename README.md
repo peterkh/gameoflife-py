@@ -1,20 +1,18 @@
-# Example starter module
+# Conway's Game of Life in Python
 
-## Getting started
-
-Rename all occurences of `mymod` to your module name
+Created this purely to practice coding.
 
 ## Testing
 
-Install the `nose` test runner
+Install `pytest`
 
-    pip install --user nose pylint
+    pip install -r requirements.txt
 
 Run the tests
 
-    nosetests tests
+    pytest
 
 Run pylint
 
-    pylint mymod
+    pylint gameoflife
 
