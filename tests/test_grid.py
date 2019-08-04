@@ -60,7 +60,19 @@ class GridTestSuite(unittest.TestCase):
         grid.set_coord(2,3, True)
         grid.set_coord(3,4, True)
         assert(grid.alive_neighbours(3,3) == 2)
-              
+
+    def test_to_json(self):
+        grid = gameoflife.Grid(3,4)
+        assert(grid.to_json() == '[[false, false, false, false], [false, ' \
+        'false, false, false], [false, false, false, false]]')
+
+    def test_from_json(self):
+        grid = gameoflife.Grid(2,4)
+        grid.from_json('[[false, true, false, true], [true, false, false, false]]')
+        assert(grid.get_coord(0,0) == False)
+        assert(grid.get_coord(0,1) == True)
+        assert(grid.to_json() == '[[false, true, false, true], [true, false, false, false]]')
+
 
 if __name__ == '__main__':
     unittest.main()

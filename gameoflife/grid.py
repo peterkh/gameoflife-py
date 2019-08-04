@@ -2,6 +2,8 @@
 Module contains the Grid class that represents a single game tick state.
 """
 
+import json
+
 def make_grid_row(length):
     """Create a row of length with each element set to value."""
     row = []
@@ -69,3 +71,21 @@ class Grid:
             if self.get_coord(neighbor[0], neighbor[1]):
                 total_alive += 1
         return total_alive
+
+    def to_json(self):
+        """ Return a JSON representation of the grid """
+        return json.dumps(self.grid)
+
+    def from_json(self, json_str):
+        """ Set the grid to a state matching passed in JSON. """
+        new_grid_state = json.loads(json_str)
+        # TODO: check if new_grid_state is a list
+        if len(new_grid_state) == self.rows:
+            for row in new_grid_state:
+                if len(row) != self.cols:
+                    # TODO: Add a better exception here
+                    raise Exception
+            self.grid = new_grid_state
+        else:
+            raise Exception
+        
